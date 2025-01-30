@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<img alt="Notepad" src="public/images/readme.banner.jpg" />
 
-## Getting Started
+<h1 align="center">
+    ParvaNota
+</h1>
 
-First, run the development server:
+<p align="center">
+    Small web application for basic text editing!
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=nextjs,tailwind,ts,git,docker" />
+  </a>
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Content Table
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [Features](#features)
+- [License](#license)
+- [Contact](#contact)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Features
 
-## Learn More
+- [ ] Should allow users to view the entire text field;
+- [ ] Should allow users to edit the entire text field;
+- [ ] Should allow users to delete the entire text field.
 
-To learn more about Next.js, take a look at the following resources:
+### Word Count
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [ ] Should allow users to view the word count of the text field under selection;
+- [ ] Should allow users to view the word count of the entire text field.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Interface Themes
 
-## Deploy on Vercel
+- [ ] Should allow users to change the text field theme to system default;
+- [ ] Should allow users to change the text field theme to dark mode;
+- [ ] Should allow users to change the text field theme to light mode.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Font Size
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [ ] Should allow users to view the text field font size;
+- [ ] Should allow users to increase the text field font size;
+- [ ] Should allow users to decrease the text field font size.
+
+### Data Persistence
+
+- [ ] Should allow users to persist the text field font size;
+- [ ] Should allow users to persist the text field theme.
+
+### Clipboard
+
+- [ ] Should allow users to copy the entire text field;
+- [ ] Should allow users to paste the entire text field.
+
+### Repository
+
+- [ ] Should allow users to access the application's source code repository.
+
+## License
+
+Distributed under the GPL v3.0 license. See [LICENSE](LICENSE.md) for more information.
+
+## Contact
+
+Victor Gabriel • [Github](https://github.com/Victor101106/) • victorgabriel101106+github@gmail.com
