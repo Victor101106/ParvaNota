@@ -1,7 +1,44 @@
 {
   "name": "parvanota",
+  "description": "Small web application for basic text editing!",
   "version": "0.1.0",
+  "keywords": [
+    "model-view-viewmodel",
+    "progressive-web-app",
+    "editor",
+    "text-editor",
+    "text",
+    "web-app",
+    "web-application",
+    "online-editor",
+    "online-text-editor",
+    "minimal",
+    "minimalist",
+    "parva",
+    "nota",
+    "note",
+    "pwa",
+    "mvvm"
+  ],
   "private": true,
+  "author": {
+    "name": "Victor Gabriel",
+    "email": "victorgabriel101106+github@gmail.com",
+    "url": "https://github.com/Victor101106/"
+  },
+  "homepage": "https://github.com/Victor101106/ParvaNota#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Victor101106/ParvaNota"
+  },
+  "bugs": {
+    "url": "https://github.com/Victor101106/ParvaNota/issues",
+    "email": "victorgabriel101106+github@gmail.com"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Victor101106"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -23,5 +60,10 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
     "@eslint/eslintrc": "^3"
-  }
+  },
+  "engines": {
+    "node": "20.x",
+    "npm": "11.x"
+  },
+  "license": "GPL-3.0-only"
 }
