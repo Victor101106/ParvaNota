@@ -22,20 +22,20 @@
 
 ## Features
 
-- [ ] Should allow users to view the entire text field;
-- [ ] Should allow users to edit the entire text field;
+- [x] Should allow users to view the entire text field;
+- [x] Should allow users to edit the entire text field;
 - [ ] Should allow users to delete the entire text field.
 
 ### Word Count
 
-- [ ] Should allow users to view the word count of the text field under selection;
-- [ ] Should allow users to view the word count of the entire text field.
+- [x] Should allow users to view the word count of the text field under selection;
+- [x] Should allow users to view the word count of the entire text field.
 
 ### Interface Themes
 
-- [ ] Should allow users to change the text field theme to system default;
-- [ ] Should allow users to change the text field theme to dark mode;
-- [ ] Should allow users to change the text field theme to light mode.
+- [x] Should allow users to change the text field theme to system default;
+- [x] Should allow users to change the text field theme to dark mode;
+- [x] Should allow users to change the text field theme to light mode.
 
 ### Font Size
 
@@ -46,7 +46,7 @@
 ### Data Persistence
 
 - [ ] Should allow users to persist the text field font size;
-- [ ] Should allow users to persist the text field theme.
+- [x] Should allow users to persist the text field theme.
 
 ### Clipboard
 
@@ -55,7 +55,7 @@
 
 ### Repository
 
-- [ ] Should allow users to access the application's source code repository.
+- [x] Should allow users to access the application's source code repository.
 
 ## License
 
