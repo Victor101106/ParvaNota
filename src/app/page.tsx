@@ -38,7 +38,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col h-dvh w-dvw overflow-hidden">
-      <div className="lg:fixed lg:bg-transparent bg-background w-full top-0 left-0 p-3.5 lg:p-5 flex flex-row-reverse justify-between">
+      <div className="lg:fixed lg:bg-transparent bg-background transition-colors w-full top-0 left-0 p-3.5 lg:p-5 flex flex-row-reverse justify-between">
         <IconButtonView
           icon={RiGithubFill}
           onClick={() => {
@@ -67,7 +67,7 @@ export default function Home() {
         />
       </div>
       <TextEditorView {...textEditorViewModel} />
-      <div className="lg:fixed lg:bg-transparent bg-background w-full bottom-0 left-0 p-3.5 lg:p-5 flex flex-row-reverse justify-between">
+      <div className="lg:fixed lg:bg-transparent bg-background transition-colors w-full bottom-0 left-0 p-3.5 lg:p-5 flex flex-row-reverse justify-between">
         <WordCounterView {...wordCounterViewModel} />
       </div>
     </main>
