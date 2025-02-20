@@ -1,4 +1,4 @@
-import { Providers } from "@/app/providers";
+import { ThemeProvider } from "@/providers/theme-provider";
 import type { Metadata } from "next";
 import { Fira_Code } from "next/font/google";
 import "./globals.css";
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={firaCode.variable} suppressHydrationWarning>
       <body className="scroll-smooth antialiased">
-        <Providers>{children}</Providers>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
