@@ -14,8 +14,9 @@ export default {
           foreground: "var(--selection-foreground)",
         },
         background: {
-          DEFAULT: "var(--background)",
+          hovering: "var(--background-hovering)",
           surface: "var(--background-surface)",
+          DEFAULT: "var(--background)",
         },
         foreground: "var(--foreground)",
       },

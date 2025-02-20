@@ -1,5 +1,9 @@
 "use client";
 
+import {
+  CollapsibleView,
+  useCollapsibleViewModel,
+} from "@/components/Collapsible";
 import { IconButtonView } from "@/components/IconButton";
 import {
   TextEditorView,
@@ -20,6 +24,8 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 export default function Home() {
+  const collapsibleViewModel = useCollapsibleViewModel();
+
   const textEditorViewModel = useTextEditorViewModel();
 
   const wordCounterViewModel = useWordCounterViewModel({
@@ -67,8 +73,9 @@ export default function Home() {
         />
       </div>
       <TextEditorView {...textEditorViewModel} />
-      <div className="lg:fixed lg:bg-transparent bg-background transition-colors w-full bottom-0 left-0 p-3.5 lg:p-5 flex flex-row-reverse justify-between">
+      <div className="lg:fixed lg:bg-transparent bg-background transition-colors w-full bottom-0 left-0 p-3.5 lg:p-5 flex flex-row-reverse justify-between items-end">
         <WordCounterView {...wordCounterViewModel} />
+        <CollapsibleView {...collapsibleViewModel} />
       </div>
     </main>
   );

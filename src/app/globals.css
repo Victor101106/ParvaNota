@@ -5,13 +5,15 @@
 :root {
   --selection-background: theme(colors.yellow.300);
   --selection-foreground: theme(colors.yellow.950);
+  --background-hovering: #e6e6e6;
   --background-surface: #e6e6e6;
   --background: #ffffff;
   --foreground: #000000;
 }
 
 .dark {
-  --background-surface: #343434;
+  --background-hovering: #343434;
+  --background-surface: #1e1e1e;
   --background: #282828;
   --foreground: #ffffff;
 }

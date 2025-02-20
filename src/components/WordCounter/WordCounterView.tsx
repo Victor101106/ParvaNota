@@ -13,7 +13,7 @@ export function WordCounterView(props: WordCounterViewProps) {
       className={`rounded-[0.25rem] px-3 py-1 transition-colors text-[0.9375rem] leading-[1.40625rem] font-medium tracking-[-4%] select-none ${
         !!props.amountOfSelectedWords
           ? "bg-selection-background text-selection-foreground"
-          : "bg-background text-foreground hover:bg-background-surface"
+          : "bg-background text-foreground hover:bg-background-hovering"
       }`}
     >
       {!!props.amountOfSelectedWords && (
