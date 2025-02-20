@@ -1,3 +1,4 @@
+import { Providers } from "@/app/providers";
 import type { Metadata } from "next";
 import { Fira_Code } from "next/font/google";
 import "./globals.css";
@@ -18,8 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={firaCode.variable}>
-      <body className="scroll-smooth antialiased">{children}</body>
+    <html lang="en" className={firaCode.variable} suppressHydrationWarning>
+      <body className="scroll-smooth antialiased">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

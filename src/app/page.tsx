@@ -9,7 +9,15 @@ import {
   useWordCounterViewModel,
   WordCounterView,
 } from "@/components/WordCounter";
-import { RiGithubFill } from "@remixicon/react";
+import {
+  RiComputerLine,
+  RiGithubFill,
+  RiMoonLine,
+  RiQuestionLine,
+  RiSunLine,
+} from "@remixicon/react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const textEditorViewModel = useTextEditorViewModel();
@@ -17,6 +25,16 @@ export default function Home() {
   const wordCounterViewModel = useWordCounterViewModel({
     ...textEditorViewModel,
   });
+
+  const { theme, setTheme } = useTheme();
+
+  const [mounted, setMounted] = useState<boolean>();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <main className="flex flex-col h-dvh w-dvw overflow-hidden">
@@ -26,6 +44,26 @@ export default function Home() {
           onClick={() => {
             window.open("https://github.com/Victor101106/ParvaNota", "_blank");
           }}
+        />
+        <IconButtonView
+          icon={
+            theme === "system"
+              ? RiComputerLine
+              : theme === "light"
+              ? RiSunLine
+              : theme === "dark"
+              ? RiMoonLine
+              : RiQuestionLine
+          }
+          onClick={() =>
+            setTheme(
+              theme === "system"
+                ? "light"
+                : theme === "light"
+                ? "dark"
+                : "system"
+            )
+          }
         />
       </div>
       <TextEditorView {...textEditorViewModel} />
