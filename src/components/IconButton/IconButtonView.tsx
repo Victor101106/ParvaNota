@@ -1,16 +1,25 @@
 import { ElementType, HtmlHTMLAttributes } from "react";
 
 export type IconButtonViewProps = {
+  variant?: "default" | "destructive";
   icon: ElementType;
 } & HtmlHTMLAttributes<HTMLButtonElement>;
 
 export function IconButtonView({ icon: Icon, ...props }: IconButtonViewProps) {
   return (
     <button
-      className="grid place-items-center w-[2.375rem] aspect-square rounded-[0.25rem] transition-colors bg-transparent opacity-50 hover:opacity-100 hover:bg-background-hovering"
+      className={`grid place-items-center w-[2.375rem] aspect-square rounded-[0.25rem] transition-colors bg-transparent hover:bg-background-hovering ${
+        props.variant !== "destructive" && "opacity-50 hover:opacity-100"
+      }`}
       {...props}
     >
-      <Icon className="text-foreground fill-foreground w-[1.125rem] aspect-square transition-all" />
+      <Icon
+        className={`${
+          props.variant === "destructive"
+            ? "fill-[#FF3939] dark:fill-[#FF6B6B]"
+            : "fill-foreground"
+        } w-[1.125rem] aspect-square`}
+      />
     </button>
   );
 }

@@ -24,9 +24,11 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const collapsibleViewModel = useCollapsibleViewModel();
-
   const textEditorViewModel = useTextEditorViewModel();
+
+  const collapsibleViewModel = useCollapsibleViewModel({
+    ...textEditorViewModel,
+  });
 
   const wordCounterViewModel = useWordCounterViewModel({
     ...textEditorViewModel,
