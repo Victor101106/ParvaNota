@@ -1,9 +1,9 @@
 "use client";
 
 import {
-  CollapsibleView,
-  useCollapsibleViewModel,
-} from "@/components/Collapsible";
+  CollapsibleMenuView,
+  useCollapsibleMenuViewModel,
+} from "@/components/CollapsibleMenu";
 import { IconButtonView } from "@/components/IconButton";
 import {
   TextEditorView,
@@ -26,7 +26,7 @@ export default function Home() {
 
   const themeSwitchViewModel = useThemeSwitchViewModel();
 
-  const collapsibleViewModel = useCollapsibleViewModel({
+  const CollapsibleMenuViewModel = useCollapsibleMenuViewModel({
     ...textEditorViewModel,
     clipboardService,
   });
@@ -57,7 +57,7 @@ export default function Home() {
       <TextEditorView {...textEditorViewModel} />
       <div className="lg:fixed lg:bg-transparent bg-background transition-colors w-full bottom-0 left-0 p-3.5 lg:p-5 flex flex-row-reverse justify-between items-end">
         <WordCounterView {...wordCounterViewModel} />
-        <CollapsibleView {...collapsibleViewModel} />
+        <CollapsibleMenuView {...CollapsibleMenuViewModel} />
       </div>
     </main>
   );

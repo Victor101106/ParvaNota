@@ -10,11 +10,13 @@ type TextEditorViewModelPickedReturnType = Pick<
   "setText" | "text"
 >;
 
-export type CollapsibleViewModelProps = {
+export type CollapsibleMenuViewModelProps = {
   clipboardService: ClipboardService;
 } & TextEditorViewModelPickedReturnType;
 
-export function useCollapsibleViewModel(props: CollapsibleViewModelProps) {
+export function useCollapsibleMenuViewModel(
+  props: CollapsibleMenuViewModelProps
+) {
   const [open, setOpen] = useState<boolean>();
 
   async function onCopyClick() {

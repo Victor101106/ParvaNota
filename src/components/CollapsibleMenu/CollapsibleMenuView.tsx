@@ -1,4 +1,4 @@
-import { useCollapsibleViewModel } from "@/components/Collapsible/CollapsibleViewModel";
+import { useCollapsibleMenuViewModel } from "@/components/CollapsibleMenu/CollapsibleMenuViewModel";
 import { IconButtonView } from "@/components/IconButton";
 import {
   RiArrowRightSLine,
@@ -7,13 +7,13 @@ import {
   RiFileCopyLine,
 } from "@remixicon/react";
 
-type CollapsibleViewModelReturnType = ReturnType<
-  typeof useCollapsibleViewModel
+type CollapsibleMenuViewModelReturnType = ReturnType<
+  typeof useCollapsibleMenuViewModel
 >;
 
-export type CollapsibleViewProps = CollapsibleViewModelReturnType;
+export type CollapsibleMenuViewProps = CollapsibleMenuViewModelReturnType;
 
-export function CollapsibleView(props: CollapsibleViewProps) {
+export function CollapsibleMenuView(props: CollapsibleMenuViewProps) {
   return (
     <div
       className={`bg-background-surface flex flex-row gap-[0.6875rem] transition-all ${
