@@ -4,6 +4,7 @@ import {
   CollapsibleMenuView,
   useCollapsibleMenuViewModel,
 } from "@/components/CollapsibleMenu";
+import { useFontSizeControlViewModel } from "@/components/FontSizeControl";
 import { IconButtonView } from "@/components/IconButton";
 import {
   TextEditorView,
@@ -18,15 +19,22 @@ import {
   WordCounterView,
 } from "@/components/WordCounter";
 import { clipboardService } from "@/services/clipboard.service";
+import { localStorageService } from "@/services/local.storage.service";
 import { RiGithubFill } from "@remixicon/react";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const textEditorViewModel = useTextEditorViewModel();
+  const fontSizeControlViewModel = useFontSizeControlViewModel({
+    localStorageService,
+  });
+
+  const textEditorViewModel = useTextEditorViewModel({
+    ...fontSizeControlViewModel,
+  });
 
   const themeSwitchViewModel = useThemeSwitchViewModel();
 
-  const CollapsibleMenuViewModel = useCollapsibleMenuViewModel({
+  const collapsibleMenuViewModel = useCollapsibleMenuViewModel({
     ...textEditorViewModel,
     clipboardService,
   });
@@ -57,7 +65,10 @@ export default function Home() {
       <TextEditorView {...textEditorViewModel} />
       <div className="lg:fixed lg:bg-transparent bg-background transition-colors w-full bottom-0 left-0 p-3.5 lg:p-5 flex flex-row-reverse justify-between items-end">
         <WordCounterView {...wordCounterViewModel} />
-        <CollapsibleMenuView {...CollapsibleMenuViewModel} />
+        <CollapsibleMenuView
+          {...fontSizeControlViewModel}
+          {...collapsibleMenuViewModel}
+        />
       </div>
     </main>
   );

@@ -1,4 +1,8 @@
 import { useCollapsibleMenuViewModel } from "@/components/CollapsibleMenu/CollapsibleMenuViewModel";
+import {
+  FontSizeControlView,
+  useFontSizeControlViewModel,
+} from "@/components/FontSizeControl";
 import { IconButtonView } from "@/components/IconButton";
 import {
   RiArrowRightSLine,
@@ -11,7 +15,12 @@ type CollapsibleMenuViewModelReturnType = ReturnType<
   typeof useCollapsibleMenuViewModel
 >;
 
-export type CollapsibleMenuViewProps = CollapsibleMenuViewModelReturnType;
+type FontSizeControlViewModelReturnType = ReturnType<
+  typeof useFontSizeControlViewModel
+>;
+
+export type CollapsibleMenuViewProps = CollapsibleMenuViewModelReturnType &
+  FontSizeControlViewModelReturnType;
 
 export function CollapsibleMenuView(props: CollapsibleMenuViewProps) {
   return (
@@ -20,6 +29,7 @@ export function CollapsibleMenuView(props: CollapsibleMenuViewProps) {
         props.open && "p-[0.1875rem]"
       }`}
     >
+      {props.open && <FontSizeControlView {...props} />}
       {props.open && (
         <div className="flex flex-row">
           <IconButtonView icon={RiFileCopyLine} onClick={props.onCopyClick} />

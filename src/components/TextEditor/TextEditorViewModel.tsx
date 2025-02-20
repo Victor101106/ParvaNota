@@ -1,6 +1,14 @@
+import { useFontSizeControlViewModel } from "@/components/FontSizeControl";
 import { ChangeEvent, useState } from "react";
 
-export function useTextEditorViewModel() {
+type FontSizeControlViewModelPickedReturnType = Pick<
+  ReturnType<typeof useFontSizeControlViewModel>,
+  "fontSize"
+>;
+
+export type TextEditorViewModelProps = FontSizeControlViewModelPickedReturnType;
+
+export function useTextEditorViewModel(props: TextEditorViewModelProps) {
   const [selectedText, setSelectedText] = useState<string>("");
   const [text, setText] = useState<string>("");
 
@@ -13,6 +21,7 @@ export function useTextEditorViewModel() {
   }
 
   return {
+    fontSize: props.fontSize,
     onTextEditorChange,
     onTextEditorSelect,
     setSelectedText,
