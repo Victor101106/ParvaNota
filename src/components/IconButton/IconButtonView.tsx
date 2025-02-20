@@ -1,9 +1,8 @@
 import { ElementType, HtmlHTMLAttributes } from "react";
 
-export interface IconButtonViewProps
-  extends HtmlHTMLAttributes<HTMLButtonElement> {
+export type IconButtonViewProps = {
   icon: ElementType;
-}
+} & HtmlHTMLAttributes<HTMLButtonElement>;
 
 export function IconButtonView({ icon: Icon, ...props }: IconButtonViewProps) {
   return (
