@@ -19,9 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={firaCode.variable}>
-      <body className="overflow-hidden scroll-smooth antialiased">
-        {children}
-      </body>
+      <body className="scroll-smooth antialiased">{children}</body>
     </html>
   );
 }

@@ -13,7 +13,10 @@ export default {
           background: "var(--selection-background)",
           foreground: "var(--selection-foreground)",
         },
-        background: "var(--background)",
+        background: {
+          DEFAULT: "var(--background)",
+          surface: "var(--background-surface)",
+        },
         foreground: "var(--foreground)",
       },
     },
