@@ -24,7 +24,7 @@
 
 - [x] Should allow users to view the entire text field;
 - [x] Should allow users to edit the entire text field;
-- [ ] Should allow users to delete the entire text field.
+- [x] Should allow users to delete the entire text field.
 
 ### Word Count
 
@@ -39,19 +39,19 @@
 
 ### Font Size
 
-- [ ] Should allow users to view the text field font size;
-- [ ] Should allow users to increase the text field font size;
-- [ ] Should allow users to decrease the text field font size.
+- [x] Should allow users to view the text field font size;
+- [x] Should allow users to increase the text field font size;
+- [x] Should allow users to decrease the text field font size.
 
 ### Data Persistence
 
-- [ ] Should allow users to persist the text field font size;
+- [x] Should allow users to persist the text field font size;
 - [x] Should allow users to persist the text field theme.
 
 ### Clipboard
 
-- [ ] Should allow users to copy the entire text field;
-- [ ] Should allow users to paste the entire text field.
+- [x] Should allow users to copy the entire text field;
+- [x] Should allow users to paste the entire text field.
 
 ### Repository
 
