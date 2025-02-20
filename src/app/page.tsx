@@ -13,6 +13,7 @@ import {
   useWordCounterViewModel,
   WordCounterView,
 } from "@/components/WordCounter";
+import { clipboardService } from "@/services/clipboard.service";
 import {
   RiComputerLine,
   RiGithubFill,
@@ -28,6 +29,7 @@ export default function Home() {
 
   const collapsibleViewModel = useCollapsibleViewModel({
     ...textEditorViewModel,
+    clipboardService,
   });
 
   const wordCounterViewModel = useWordCounterViewModel({

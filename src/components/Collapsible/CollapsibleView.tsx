@@ -1,6 +1,11 @@
 import { useCollapsibleViewModel } from "@/components/Collapsible/CollapsibleViewModel";
 import { IconButtonView } from "@/components/IconButton";
-import { RiArrowRightSLine, RiDeleteBin7Line } from "@remixicon/react";
+import {
+  RiArrowRightSLine,
+  RiClipboardLine,
+  RiDeleteBin7Line,
+  RiFileCopyLine,
+} from "@remixicon/react";
 
 type CollapsibleViewModelReturnType = ReturnType<
   typeof useCollapsibleViewModel
@@ -17,6 +22,8 @@ export function CollapsibleView(props: CollapsibleViewProps) {
     >
       {props.open && (
         <div className="flex flex-row">
+          <IconButtonView icon={RiFileCopyLine} onClick={props.onCopyClick} />
+          <IconButtonView icon={RiClipboardLine} onClick={props.onPasteClick} />
           <IconButtonView
             icon={RiDeleteBin7Line}
             onClick={props.onDeleteClick}
