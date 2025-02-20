@@ -9,6 +9,10 @@ export default {
   theme: {
     extend: {
       colors: {
+        selection: {
+          background: "var(--selection-background)",
+          foreground: "var(--selection-foreground)",
+        },
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
