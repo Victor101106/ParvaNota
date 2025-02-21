@@ -1,0 +1,9 @@
+{
+  "WordCounter": {
+    "Selection": "{amountOfSelectedWords} of {amountOfWords} Words",
+    "Default": "{amountOfWords} Words"
+  },
+  "TextEditor": {
+    "Placeholder": "Welcome to ParvaNota!\nEnter or paste your text here..."
+  }
+}

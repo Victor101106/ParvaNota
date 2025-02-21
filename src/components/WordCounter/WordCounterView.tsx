@@ -1,4 +1,5 @@
 import { useWordCounterViewModel } from "@/components/WordCounter/WordCounterViewModel";
+import { useTranslations } from "next-intl";
 
 type WordCounterViewModelPickedReturnType = Pick<
   ReturnType<typeof useWordCounterViewModel>,
@@ -8,6 +9,8 @@ type WordCounterViewModelPickedReturnType = Pick<
 export type WordCounterViewProps = WordCounterViewModelPickedReturnType;
 
 export function WordCounterView(props: WordCounterViewProps) {
+  const translate = useTranslations("WordCounter");
+
   return (
     <p
       className={`rounded-[0.25rem] px-3 py-1 transition-colors text-[0.9375rem] leading-[1.40625rem] font-medium tracking-[-4%] select-none ${
@@ -16,10 +19,9 @@ export function WordCounterView(props: WordCounterViewProps) {
           : "bg-background text-foreground hover:bg-background-hovering"
       }`}
     >
-      {!!props.amountOfSelectedWords && (
-        <span>{props.amountOfSelectedWords} of </span>
-      )}
-      {props.amountOfWords} Words
+      {translate(!!props.amountOfSelectedWords ? "Selection" : "Default", {
+        ...props,
+      })}
     </p>
   );
 }
