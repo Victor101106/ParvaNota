@@ -30,7 +30,9 @@
 
 ## Requirements
 
-1. `NodeJS v20.x`.
+- `NodeJS v20.x`
+- `npm v10.x`
+- `Docker >= v28.0.0`
 
 ## Getting Started
 
