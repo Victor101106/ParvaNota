@@ -38,13 +38,13 @@
 
 Follow the step-by-step instructions to set up and run the application:
 
+### Development Mode
+
 1. Clone the repository:
 
    ```bash
    git clone https://github.com/Victor101106/ParvaNota.git
    ```
-
-### Development Mode
 
 2. Install dependencies:
 
@@ -59,6 +59,12 @@ Follow the step-by-step instructions to set up and run the application:
    ```
 
 ### Production Mode
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Victor101106/ParvaNota.git
+   ```
 
 2. Install dependencies:
 
@@ -85,6 +91,12 @@ Follow the step-by-step instructions to set up and run the application:
    ```
 
 ### Production Mode with Docker
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Victor101106/ParvaNota.git
+   ```
 
 2. Build and start the application container:
 
