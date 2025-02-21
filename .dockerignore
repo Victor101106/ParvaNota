@@ -1,0 +1,10 @@
+public/images/readme*
+docker-compose.yml
+npm-debug.log
+.dockerignore
+node_modules
+Dockerfile
+LICENSE.md
+README.md
+.next
+.git
