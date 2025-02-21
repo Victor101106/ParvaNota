@@ -67,36 +67,36 @@ export default function Home() {
     <main className="flex flex-col h-dvh w-dvw overflow-hidden">
       <div
         className={
-          "transition-all lg:fixed lg:bg-transparent bg-background w-full top-0 left-0 p-3.5 lg:p-5 flex flex-row-reverse justify-between " +
+          "transition-all lg:fixed lg:bg-transparent bg-background w-full top-0 left-0 p-3.5 lg:p-5 flex flex-row justify-between " +
           (!visible ? "opacity-0" : "opacity-100")
         }
         onMouseOver={enableInterface}
         onTouchMove={enableInterface}
         onClick={enableInterface}
       >
+        <ThemeSwitchView {...themeSwitchViewModel} />
         <IconButtonView
           icon={RiGithubFill}
           onClick={() => {
             window.open("https://github.com/Victor101106/ParvaNota", "_blank");
           }}
         />
-        <ThemeSwitchView {...themeSwitchViewModel} />
       </div>
       <TextEditorView {...textEditorViewModel} />
       <div
         className={
-          "transition-all fixed bg-transparent w-full bottom-0 left-0 p-3.5 lg:p-5 flex flex-row-reverse justify-between items-end " +
+          "transition-all fixed bg-transparent min-w-full gap-2 bottom-0 left-0 p-3.5 lg:p-5 flex flex-row justify-between items-end " +
           (!visible ? "opacity-0" : "opacity-100")
         }
         onMouseOver={enableInterface}
         onTouchMove={enableInterface}
         onClick={enableInterface}
       >
-        <WordCounterView {...wordCounterViewModel} />
         <CollapsibleMenuView
           {...fontSizeControlViewModel}
           {...collapsibleMenuViewModel}
         />
+        <WordCounterView {...wordCounterViewModel} />
       </div>
     </main>
   );
