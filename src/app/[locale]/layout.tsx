@@ -1,4 +1,4 @@
-import { routing } from "@/i18n/routing";
+import { routing } from "@/libraries/next-intl/routing";
 import { LocaleProvider } from "@/providers/locale-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { getTranslations } from "next-intl/server";
