@@ -25,7 +25,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function RootLayout({
+export default async function LocaleLayout({
   children,
   params,
 }: Readonly<{
@@ -34,7 +34,7 @@ export default async function RootLayout({
 }>) {
   const locale = (await params).locale;
 
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.some((item) => item === locale)) {
     return notFound();
   }
 
