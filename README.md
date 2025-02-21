@@ -17,6 +17,7 @@
 ## Content Table
 
 - [Features](#features)
+- [Conventional Commits](#conventional-commits)
 - [License](#license)
 - [Contact](#contact)
 
@@ -56,6 +57,28 @@
 ### Repository
 
 - [x] Should allow users to access the application's source code repository.
+
+## Conventional Commits
+
+This project follows the [Conventional Commits](https://www.conventionalcommits.org/) specification to maintain a clean and consistent commit history.
+
+### Message Structure
+
+The commit message should be structured as follows:
+
+```bash
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+#### Example:
+
+```bash
+feat(auth): add login functionality
+```
 
 ## License
 
