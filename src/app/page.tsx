@@ -24,12 +24,24 @@ import { RiGithubFill } from "@remixicon/react";
 import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [visible, setVisible] = useState<boolean>(true);
+
+  function enableInterface() {
+    setVisible(true);
+  }
+
+  function disableInterface() {
+    setVisible(false);
+  }
+
   const fontSizeControlViewModel = useFontSizeControlViewModel({
     localStorageService,
   });
 
   const textEditorViewModel = useTextEditorViewModel({
     ...fontSizeControlViewModel,
+    disableInterface,
+    enableInterface,
   });
 
   const themeSwitchViewModel = useThemeSwitchViewModel();
@@ -53,7 +65,15 @@ export default function Home() {
 
   return (
     <main className="flex flex-col h-dvh w-dvw overflow-hidden">
-      <div className="lg:fixed lg:bg-transparent bg-background transition-colors w-full top-0 left-0 p-3.5 lg:p-5 flex flex-row-reverse justify-between">
+      <div
+        className={
+          "transition-all lg:fixed lg:bg-transparent bg-background w-full top-0 left-0 p-3.5 lg:p-5 flex flex-row-reverse justify-between " +
+          (!visible ? "opacity-0" : "opacity-100")
+        }
+        onMouseOver={enableInterface}
+        onTouchMove={enableInterface}
+        onClick={enableInterface}
+      >
         <IconButtonView
           icon={RiGithubFill}
           onClick={() => {
@@ -63,7 +83,15 @@ export default function Home() {
         <ThemeSwitchView {...themeSwitchViewModel} />
       </div>
       <TextEditorView {...textEditorViewModel} />
-      <div className="lg:fixed lg:bg-transparent bg-background transition-colors w-full bottom-0 left-0 p-3.5 lg:p-5 flex flex-row-reverse justify-between items-end">
+      <div
+        className={
+          "transition-all lg:fixed lg:bg-transparent bg-background w-full bottom-0 left-0 p-3.5 lg:p-5 flex flex-row-reverse justify-between items-end " +
+          (!visible ? "opacity-0" : "opacity-100")
+        }
+        onMouseOver={enableInterface}
+        onTouchMove={enableInterface}
+        onClick={enableInterface}
+      >
         <WordCounterView {...wordCounterViewModel} />
         <CollapsibleMenuView
           {...fontSizeControlViewModel}

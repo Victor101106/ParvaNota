@@ -6,14 +6,25 @@ type FontSizeControlViewModelPickedReturnType = Pick<
   "fontSize"
 >;
 
-export type TextEditorViewModelProps = FontSizeControlViewModelPickedReturnType;
+export type TextEditorViewModelProps = {
+  disableInterface: () => void;
+  enableInterface: () => void;
+} & FontSizeControlViewModelPickedReturnType;
 
 export function useTextEditorViewModel(props: TextEditorViewModelProps) {
   const [selectedText, setSelectedText] = useState<string>("");
   const [text, setText] = useState<string>("");
 
+  function onTextEditorBlur() {
+    props.enableInterface();
+  }
+
   function onTextEditorChange(event: ChangeEvent<HTMLTextAreaElement>) {
     setText(event.target.value);
+  }
+
+  function onTextEditorInput() {
+    props.disableInterface();
   }
 
   function onTextEditorSelect() {
@@ -24,6 +35,8 @@ export function useTextEditorViewModel(props: TextEditorViewModelProps) {
     fontSize: props.fontSize,
     onTextEditorChange,
     onTextEditorSelect,
+    onTextEditorInput,
+    onTextEditorBlur,
     setSelectedText,
     selectedText,
     setText,

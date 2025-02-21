@@ -2,7 +2,12 @@ import { useTextEditorViewModel } from "@/components/TextEditor/TextEditorViewMo
 
 type TextEditorViewModelPickedReturnType = Pick<
   ReturnType<typeof useTextEditorViewModel>,
-  "onTextEditorChange" | "onTextEditorSelect" | "fontSize" | "text"
+  | "onTextEditorChange"
+  | "onTextEditorSelect"
+  | "onTextEditorInput"
+  | "onTextEditorBlur"
+  | "fontSize"
+  | "text"
 >;
 
 export type TextEditorViewProps = TextEditorViewModelPickedReturnType;
@@ -14,6 +19,8 @@ export function TextEditorView(props: TextEditorViewProps) {
       placeholder={"Welcome to ParvaNota!\nEnter or paste your text here..."}
       onChange={props.onTextEditorChange}
       onSelect={props.onTextEditorSelect}
+      onInput={props.onTextEditorInput}
+      onBlur={props.onTextEditorBlur}
       value={props.text}
       style={{
         lineHeight: 1.5,
