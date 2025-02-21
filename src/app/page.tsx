@@ -85,7 +85,7 @@ export default function Home() {
       <TextEditorView {...textEditorViewModel} />
       <div
         className={
-          "transition-all lg:fixed lg:bg-transparent bg-background w-full bottom-0 left-0 p-3.5 lg:p-5 flex flex-row-reverse justify-between items-end " +
+          "transition-all fixed bg-transparent w-full bottom-0 left-0 p-3.5 lg:p-5 flex flex-row-reverse justify-between items-end " +
           (!visible ? "opacity-0" : "opacity-100")
         }
         onMouseOver={enableInterface}
