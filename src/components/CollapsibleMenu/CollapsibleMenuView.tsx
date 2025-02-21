@@ -25,7 +25,7 @@ export type CollapsibleMenuViewProps = CollapsibleMenuViewModelReturnType &
 export function CollapsibleMenuView(props: CollapsibleMenuViewProps) {
   return (
     <div
-      className={`bg-background-surface flex flex-row gap-[0.6875rem] transition-all ${
+      className={`bg-background-surface flex flex-row gap-[0.6875rem] transition-all rounded-[0.25rem] ${
         props.open && "p-[0.1875rem]"
       }`}
     >
