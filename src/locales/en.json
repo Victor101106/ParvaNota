@@ -5,5 +5,9 @@
   },
   "TextEditor": {
     "Placeholder": "Welcome to ParvaNota!\nEnter or paste your text here..."
+  },
+  "Metadata": {
+    "Description": "Small web application for basic text editing!",
+    "Title": "Welcome to ParvaNota!"
   }
 }
