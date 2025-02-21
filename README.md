@@ -17,6 +17,7 @@
 ## Content Table
 
 - [Requirements](#requirements)
+- [Getting Started](#getting-started)
 - [Features](#features)
 - [Conventional Commits](#conventional-commits)
 - [License](#license)
@@ -25,6 +26,28 @@
 ## Requirements
 
 1. `NodeJS v20.x`.
+
+## Getting Started
+
+Follow the step-by-step instructions to set up and run the project:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Victor101106/ParvaNota.git
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Run the project in development mode:
+
+   ```bash
+   npm run dev
+   ```
 
 ## Features
 
