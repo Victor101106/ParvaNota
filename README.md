@@ -34,7 +34,7 @@
 
 ## Getting Started
 
-Follow the step-by-step instructions to set up and run the project:
+Follow the step-by-step instructions to set up and run the application:
 
 1. Clone the repository:
 
@@ -42,16 +42,52 @@ Follow the step-by-step instructions to set up and run the project:
    git clone https://github.com/Victor101106/ParvaNota.git
    ```
 
+### Development Mode
+
 2. Install dependencies:
 
    ```bash
    npm install
    ```
 
-3. Run the project in development mode:
+3. Run the application in development mode:
 
    ```bash
    npm run dev
+   ```
+
+### Production Mode
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Build the application:
+
+   ```bash
+   npm run build
+   ```
+
+4. Remove development dependencies:
+
+   ```bash
+   npm prune --production
+   ```
+
+5. Run the application in production mode:
+
+   ```bash
+   npm run start
+   ```
+
+### Production Mode with Docker
+
+2. Build and start the application container:
+
+   ```bash
+   docker compose up
    ```
 
 ## Features
