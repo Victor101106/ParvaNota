@@ -16,12 +16,17 @@
 
 ## Content Table
 
+- [Screenshot](#screenshot)
 - [Requirements](#requirements)
 - [Getting Started](#getting-started)
 - [Features](#features)
 - [Conventional Commits](#conventional-commits)
 - [License](#license)
 - [Contact](#contact)
+
+## Screenshot
+
+<img alt="Screenshot" src="public/images/readme.screenshot.png">
 
 ## Requirements
 
