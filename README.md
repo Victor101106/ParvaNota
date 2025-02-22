@@ -16,7 +16,7 @@
 
 ## Content Table
 
-- [Screenshot](#screenshot)
+- [Screenshots](#screenshots)
 - [Requirements](#requirements)
 - [Getting Started](#getting-started)
 - [Features](#features)
@@ -24,9 +24,9 @@
 - [License](#license)
 - [Contact](#contact)
 
-## Screenshot
+## Screenshots
 
-<img alt="Screenshot" src="public/images/readme.screenshot.png">
+<img alt="Screenshots" src="public/images/readme.screenshots.png">
 
 ## Requirements
 
