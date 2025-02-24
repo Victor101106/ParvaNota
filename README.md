@@ -16,6 +16,7 @@
 
 ## Content Table
 
+- [Deployment](#deployment)
 - [Screenshots](#screenshots)
 - [Requirements](#requirements)
 - [Getting Started](#getting-started)
@@ -23,6 +24,10 @@
 - [Conventional Commits](#conventional-commits)
 - [License](#license)
 - [Contact](#contact)
+
+## Deployment
+
+🔗 [ParvaNota - Deployment](https://parvanota.vercel.app/)
 
 ## Screenshots
 
