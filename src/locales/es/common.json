@@ -1,0 +1,13 @@
+{
+  "WordCounter": {
+    "Selection": "{amountOfSelectedWords} de {amountOfWords} Palabras",
+    "Default": "{amountOfWords} Palabras"
+  },
+  "TextEditor": {
+    "Placeholder": "¡Bienvenido a ParvaNota!\nIntroduce o pega tu texto aquí..."
+  },
+  "Metadata": {
+    "Description": "¡Pequeña aplicación web para edición de texto básica!",
+    "Title": "¡Bienvenido a ParvaNota!"
+  }
+}
