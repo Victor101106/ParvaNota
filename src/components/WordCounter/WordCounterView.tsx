@@ -1,12 +1,11 @@
 import { useWordCounterViewModel } from "@/components/WordCounter/WordCounterViewModel";
 import { useTranslations } from "next-intl";
 
-type WordCounterViewModelPickedReturnType = Pick<
-  ReturnType<typeof useWordCounterViewModel>,
-  "amountOfSelectedWords" | "amountOfWords"
+type WordCounterViewModelReturnType = ReturnType<
+  typeof useWordCounterViewModel
 >;
 
-export type WordCounterViewProps = WordCounterViewModelPickedReturnType;
+export type WordCounterViewProps = WordCounterViewModelReturnType;
 
 export function WordCounterView(props: WordCounterViewProps) {
   const translate = useTranslations("WordCounter");
@@ -14,13 +13,14 @@ export function WordCounterView(props: WordCounterViewProps) {
   return (
     <p
       className={`min-w-fit rounded-[0.25rem] px-3 py-1 transition-colors text-[0.9375rem] leading-[1.40625rem] font-medium tracking-[-4%] select-none ${
-        !!props.amountOfSelectedWords
+        !!props.currentSelectedWordCount
           ? "bg-selection-background text-selection-foreground"
           : "bg-background text-foreground hover:bg-background-hovering"
       }`}
     >
-      {translate(!!props.amountOfSelectedWords ? "Selection" : "Default", {
-        ...props,
+      {translate(!!props.currentSelectedWordCount ? "Selection" : "Default", {
+        selectedWordCount: props.currentSelectedWordCount,
+        wordCount: props.currentWordCount,
       })}
     </p>
   );

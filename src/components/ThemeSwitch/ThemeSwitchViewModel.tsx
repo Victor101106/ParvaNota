@@ -1,13 +1,16 @@
+import { ThemeModel } from "@/models/ThemeModel";
 import { useTheme } from "next-themes";
 
-export function useThemeSwitchViewModel() {
-  const { theme, setTheme } = useTheme();
+export type ThemeSwitchViewModelProps = {
+  themeModel: ThemeModel;
+};
+
+export function useThemeSwitchViewModel(props: ThemeSwitchViewModelProps) {
+  const { theme: currentTheme, setTheme } = useTheme();
 
   function onSwitchClick() {
-    setTheme(
-      theme === "system" ? "light" : theme === "light" ? "dark" : "system"
-    );
+    setTheme(props.themeModel.switch(currentTheme));
   }
 
-  return { theme, onSwitchClick };
+  return { currentTheme, onSwitchClick };
 }

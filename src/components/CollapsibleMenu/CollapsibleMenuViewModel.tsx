@@ -1,39 +1,33 @@
-import { useTextEditorViewModel } from "@/components/TextEditor";
-import {
-  clipboardService,
-  ClipboardService,
-} from "@/services/clipboard.service";
-import { useState } from "react";
-
-type TextEditorViewModelPickedReturnType = Pick<
-  ReturnType<typeof useTextEditorViewModel>,
-  "setText" | "text"
->;
+import { CollapsibleModel } from "@/models/CollapsibleModel";
+import { TextModel } from "@/models/TextModel";
+import { ClipboardService } from "@/services/clipboard.service";
 
 export type CollapsibleMenuViewModelProps = {
   clipboardService: ClipboardService;
-} & TextEditorViewModelPickedReturnType;
+  collapsibleModel: CollapsibleModel;
+  textModel: TextModel;
+};
 
 export function useCollapsibleMenuViewModel(
   props: CollapsibleMenuViewModelProps
 ) {
-  const [open, setOpen] = useState<boolean>();
+  const isOpen = props.collapsibleModel.open;
 
   async function onCopyClick() {
-    await props.clipboardService.copy(props.text);
+    await props.clipboardService.copy(props.textModel.value);
   }
 
   function onDeleteClick() {
-    props.setText("");
+    props.textModel.value = "";
   }
 
   async function onPasteClick() {
-    props.setText(await clipboardService.paste());
+    props.textModel.value = await props.clipboardService.paste();
   }
 
   function onToggleClick() {
-    setOpen(!open);
+    props.collapsibleModel.toggle();
   }
 
-  return { open, onCopyClick, onDeleteClick, onPasteClick, onToggleClick };
+  return { onCopyClick, onDeleteClick, onPasteClick, onToggleClick, isOpen };
 }

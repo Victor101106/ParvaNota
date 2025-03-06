@@ -1,17 +1,9 @@
 import { useTextEditorViewModel } from "@/components/TextEditor/TextEditorViewModel";
 import { useTranslations } from "next-intl";
 
-type TextEditorViewModelPickedReturnType = Pick<
-  ReturnType<typeof useTextEditorViewModel>,
-  | "onTextEditorChange"
-  | "onTextEditorSelect"
-  | "onTextEditorInput"
-  | "onTextEditorBlur"
-  | "fontSize"
-  | "text"
->;
+type TextEditorViewModelReturnType = ReturnType<typeof useTextEditorViewModel>;
 
-export type TextEditorViewProps = TextEditorViewModelPickedReturnType;
+export type TextEditorViewProps = TextEditorViewModelReturnType;
 
 export function TextEditorView(props: TextEditorViewProps) {
   const translate = useTranslations("TextEditor");
@@ -24,10 +16,10 @@ export function TextEditorView(props: TextEditorViewProps) {
       onSelect={props.onTextEditorSelect}
       onInput={props.onTextEditorInput}
       onBlur={props.onTextEditorBlur}
-      value={props.text}
+      value={props.currentText}
       style={{
         lineHeight: 1.5,
-        fontSize: props.fontSize,
+        fontSize: props.currentFontSize,
       }}
     />
   );

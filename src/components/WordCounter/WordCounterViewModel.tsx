@@ -1,22 +1,18 @@
-import { useTextEditorViewModel } from "@/components/TextEditor";
+import { TextModel } from "@/models/TextModel";
+import { WordCounterModel } from "@/models/WordCounterModel";
 
-type TextEditorViewModelPickedReturnType = Pick<
-  ReturnType<typeof useTextEditorViewModel>,
-  "selectedText" | "text"
->;
-
-export type WordCounterViewModelProps = TextEditorViewModelPickedReturnType;
+export type WordCounterViewModelProps = {
+  wordCounterModel: WordCounterModel;
+  textModel: TextModel;
+};
 
 export function useWordCounterViewModel(props: WordCounterViewModelProps) {
-  function calculateAmountOfWords(text: string) {
-    return text
-      .trim()
-      .split(/\s+/)
-      .filter((word) => word).length;
-  }
+  const currentSelectedText = props.textModel.selection;
+  const currentText = props.textModel.value;
 
   return {
-    amountOfSelectedWords: calculateAmountOfWords(props.selectedText),
-    amountOfWords: calculateAmountOfWords(props.text),
+    currentSelectedWordCount:
+      props.wordCounterModel.calculate(currentSelectedText),
+    currentWordCount: props.wordCounterModel.calculate(currentText),
   };
 }

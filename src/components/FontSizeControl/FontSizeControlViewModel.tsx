@@ -1,37 +1,32 @@
+import { FontModel } from "@/models/FontModel";
 import { LocalStorageService } from "@/services/local.storage.service";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export type FontSizeControlViewModelProps = {
   localStorageService: LocalStorageService;
+  fontModel: FontModel;
 };
 
 export function useFontSizeControlViewModel(
   props: FontSizeControlViewModelProps
 ) {
-  const [fontSize, setFontSize] = useState<number>(15);
+  const currentFontSize = props.fontModel.size;
 
   function onDecreaseClick() {
-    const decreasedFontSize = Math.max(0, fontSize - 1);
-
-    props.localStorageService.setFontSize(decreasedFontSize);
-    setFontSize(decreasedFontSize);
+    props.localStorageService.setFontSize(props.fontModel.decreaseSize());
   }
 
   function onIncreaseClick() {
-    const increasedFontSize = Math.min(fontSize + 1, 100);
-
-    props.localStorageService.setFontSize(increasedFontSize);
-    setFontSize(increasedFontSize);
+    props.localStorageService.setFontSize(props.fontModel.increaseSize());
   }
 
   function onResetClick() {
-    props.localStorageService.setFontSize(15);
-    setFontSize(15);
+    props.localStorageService.setFontSize(props.fontModel.resetSize());
   }
 
   useEffect(() => {
-    setFontSize(props.localStorageService.getFontSize());
+    props.fontModel.size = props.localStorageService.getFontSize();
   }, [props.localStorageService]);
 
-  return { onDecreaseClick, onIncreaseClick, onResetClick, fontSize };
+  return { onDecreaseClick, onIncreaseClick, onResetClick, currentFontSize };
 }

@@ -16,7 +16,7 @@ export function FontSizeControlView(props: FontSizeControlViewProps) {
         className="text-[0.9375rem] bg-transparent text-foreground font-medium w-7 text-center"
         onClick={props.onResetClick}
       >
-        {props.fontSize}
+        {props.currentFontSize}
       </button>
       <IconButtonView icon={RiAddLine} onClick={props.onIncreaseClick} />
     </div>

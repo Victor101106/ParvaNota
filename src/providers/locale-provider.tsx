@@ -1,16 +1,16 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
-export async function LocaleProvider({
-  children,
-}: {
+export type LocaleProviderProps = {
   children: React.ReactNode;
-}) {
+};
+
+export async function LocaleProvider(props: LocaleProviderProps) {
   const messages = await getMessages();
 
   return (
     <NextIntlClientProvider messages={messages}>
-      {children}
+      {props.children}
     </NextIntlClientProvider>
   );
 }

@@ -11,13 +11,16 @@ const firaCode = Fira_Code({
   subsets: ["latin"],
 });
 
-export async function generateMetadata({
-  params,
-}: {
+export type GenerateMetadataProps = {
   params: Promise<{ locale: string }>;
-}) {
-  const locale = (await params).locale;
-  const translate = await getTranslations({ namespace: "Metadata", locale });
+};
+
+export async function generateMetadata(props: GenerateMetadataProps) {
+  const params = await props.params;
+  const translate = await getTranslations({
+    namespace: "Metadata",
+    locale: params.locale,
+  });
 
   return {
     description: translate("Description"),
@@ -25,14 +28,14 @@ export async function generateMetadata({
   };
 }
 
-export default async function LocaleLayout({
-  children,
-  params,
-}: Readonly<{
+export type LocaleLayoutProps = Readonly<{
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
-}>) {
-  const locale = (await params).locale;
+}>;
+
+export default async function LocaleLayout(props: LocaleLayoutProps) {
+  const params = await props.params;
+  const locale = params.locale;
 
   if (!routing.locales.some((item) => item === locale)) {
     return notFound();
@@ -42,7 +45,7 @@ export default async function LocaleLayout({
     <html lang={locale} className={firaCode.variable} suppressHydrationWarning>
       <body className="scroll-smooth antialiased">
         <LocaleProvider>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>{props.children}</ThemeProvider>
         </LocaleProvider>
       </body>
     </html>

@@ -17,11 +17,11 @@ export function ThemeSwitchView(props: ThemeSwitchViewProps) {
   return (
     <IconButtonView
       icon={
-        props.theme === "system"
+        props.currentTheme === "system"
           ? RiComputerLine
-          : props.theme === "light"
+          : props.currentTheme === "light"
           ? RiSunLine
-          : props.theme === "dark"
+          : props.currentTheme === "dark"
           ? RiMoonLine
           : RiQuestionLine
       }

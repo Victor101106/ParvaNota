@@ -1,4 +1,10 @@
 export class ClipboardService {
+  private constructor() {}
+
+  public static create(): ClipboardService {
+    return new ClipboardService();
+  }
+
   public async copy(content: string): Promise<void> {
     return navigator.clipboard.writeText(content);
   }
@@ -7,5 +13,3 @@ export class ClipboardService {
     return await navigator.clipboard.readText();
   }
 }
-
-export const clipboardService = new ClipboardService();

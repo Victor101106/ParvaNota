@@ -1,45 +1,40 @@
-import { useFontSizeControlViewModel } from "@/components/FontSizeControl";
-import { ChangeEvent, useState } from "react";
-
-type FontSizeControlViewModelPickedReturnType = Pick<
-  ReturnType<typeof useFontSizeControlViewModel>,
-  "fontSize"
->;
+import { FontModel } from "@/models/FontModel";
+import { InterfaceModel } from "@/models/InterfaceModel";
+import { TextModel } from "@/models/TextModel";
+import { ChangeEvent } from "react";
 
 export type TextEditorViewModelProps = {
-  disableInterface: () => void;
-  enableInterface: () => void;
-} & FontSizeControlViewModelPickedReturnType;
+  interfaceModel: InterfaceModel;
+  fontModel: FontModel;
+  textModel: TextModel;
+};
 
 export function useTextEditorViewModel(props: TextEditorViewModelProps) {
-  const [selectedText, setSelectedText] = useState<string>("");
-  const [text, setText] = useState<string>("");
+  const currentFontSize = props.fontModel.size;
+  const currentText = props.textModel.value;
 
   function onTextEditorBlur() {
-    props.enableInterface();
+    props.interfaceModel.show();
   }
 
   function onTextEditorChange(event: ChangeEvent<HTMLTextAreaElement>) {
-    setText(event.target.value);
+    props.textModel.value = event.target.value;
   }
 
   function onTextEditorInput() {
-    props.disableInterface();
+    props.interfaceModel.hidden();
   }
 
   function onTextEditorSelect() {
-    setSelectedText(window?.getSelection()?.toString() || String());
+    props.textModel.selection = window?.getSelection()?.toString() || String();
   }
 
   return {
-    fontSize: props.fontSize,
     onTextEditorChange,
     onTextEditorSelect,
     onTextEditorInput,
     onTextEditorBlur,
-    setSelectedText,
-    selectedText,
-    setText,
-    text,
+    currentFontSize,
+    currentText,
   };
 }

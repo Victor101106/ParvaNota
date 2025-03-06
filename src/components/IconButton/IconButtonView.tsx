@@ -1,8 +1,9 @@
-import { ElementType, HtmlHTMLAttributes } from "react";
+import { RemixiconComponentType } from "@remixicon/react";
+import { HtmlHTMLAttributes } from "react";
 
 export type IconButtonViewProps = {
   variant?: "default" | "destructive";
-  icon: ElementType;
+  icon: RemixiconComponentType;
 } & HtmlHTMLAttributes<HTMLButtonElement>;
 
 export function IconButtonView({ icon: Icon, ...props }: IconButtonViewProps) {
