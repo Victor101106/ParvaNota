@@ -1,17 +1,17 @@
-import { CollapsibleModel } from "@/models/CollapsibleModel";
-import { FontModel } from "@/models/FontModel";
-import { InterfaceModel } from "@/models/InterfaceModel";
-import { TextModel } from "@/models/TextModel";
-import { ThemeModel } from "@/models/ThemeModel";
-import { WordCounterModel } from "@/models/WordCounterModel";
+import { useCollapsibleModel } from "@/models/CollapsibleModel";
+import { useFontModel } from "@/models/FontModel";
+import { useInterfaceModel } from "@/models/InterfaceModel";
+import { useTextModel } from "@/models/TextModel";
+import { useThemeModel } from "@/models/ThemeModel";
+import { useWordCounterModel } from "@/models/WordCounterModel";
 
 export function useModels() {
   return {
-    wordCounterModel: WordCounterModel.create(),
-    collapsibleModel: CollapsibleModel.create(),
-    interfaceModel: InterfaceModel.create(),
-    themeModel: ThemeModel.create(),
-    fontModel: FontModel.create(),
-    textModel: TextModel.create(),
+    wordCounterModel: useWordCounterModel(),
+    collapsibleModel: useCollapsibleModel(),
+    interfaceModel: useInterfaceModel(),
+    themeModel: useThemeModel(),
+    fontModel: useFontModel(),
+    textModel: useTextModel(),
   };
 }

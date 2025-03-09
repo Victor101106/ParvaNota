@@ -26,7 +26,7 @@ export function useFontSizeControlViewModel(
 
   useEffect(() => {
     props.fontModel.size = props.localStorageService.getFontSize();
-  }, [props.localStorageService]);
+  }, [props.localStorageService, props.fontModel]);
 
   return { onDecreaseClick, onIncreaseClick, onResetClick, currentFontSize };
 }

@@ -1,22 +1,13 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 
-export class CollapsibleModel {
-  private constructor(
-    private readonly setCollapsed: Dispatch<SetStateAction<boolean>>,
-    private readonly collapsed: boolean
-  ) {}
+export type CollapsibleModel = ReturnType<typeof useCollapsibleModel>;
 
-  public static create() {
-    const [collapsed, setCollapsed] = useState<boolean>(true);
+export function useCollapsibleModel() {
+  const [collapsed, setCollapsed] = useState<boolean>(true);
 
-    return new CollapsibleModel(setCollapsed, collapsed);
+  function toggle() {
+    setCollapsed((value) => !value);
   }
 
-  public toggle() {
-    this.setCollapsed((value) => !value);
-  }
-
-  public get open(): boolean {
-    return !this.collapsed;
-  }
+  return { toggle, open: collapsed };
 }

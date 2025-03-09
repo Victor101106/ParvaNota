@@ -1,11 +1,13 @@
-export class ThemeModel {
-  private constructor() {}
+export type ThemeModel = ReturnType<typeof useThemeModel>;
 
-  public static create() {
-    return new ThemeModel();
-  }
-
-  public switch(theme?: string): string {
-    return theme === "system" ? "light" : theme === "light" ? "dark" : "system";
-  }
+export function useThemeModel() {
+  return {
+    switch(theme?: string): string {
+      return theme === "system"
+        ? "light"
+        : theme === "light"
+        ? "dark"
+        : "system";
+    },
+  };
 }

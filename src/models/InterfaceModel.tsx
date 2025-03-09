@@ -1,26 +1,17 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 
-export class InterfaceModel {
-  private constructor(
-    private readonly setVisibility: Dispatch<SetStateAction<boolean>>,
-    private readonly visibility: boolean
-  ) {}
+export type InterfaceModel = ReturnType<typeof useInterfaceModel>;
 
-  public static create() {
-    const [visibility, setVisibility] = useState<boolean>(true);
+export function useInterfaceModel() {
+  const [visibility, setVisibility] = useState<boolean>(true);
 
-    return new InterfaceModel(setVisibility, visibility);
+  function hidden() {
+    setVisibility(false);
   }
 
-  public hidden() {
-    this.setVisibility(false);
+  function show() {
+    setVisibility(true);
   }
 
-  public show() {
-    this.setVisibility(true);
-  }
-
-  public get visible(): boolean {
-    return this.visibility;
-  }
+  return { hidden, show, visible: visibility };
 }

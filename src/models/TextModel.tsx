@@ -1,33 +1,26 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 
-export class TextModel {
-  private constructor(
-    private readonly setSelectedText: Dispatch<SetStateAction<string>>,
-    private readonly selectedText: string,
-    private readonly setText: Dispatch<SetStateAction<string>>,
-    private readonly text: string
-  ) {}
+export type TextModel = ReturnType<typeof useTextModel>;
 
-  public static create() {
-    const [selectedText, setSelectedText] = useState<string>("");
-    const [text, setText] = useState<string>("");
+export function useTextModel() {
+  const [selectedText, setSelectedText] = useState<string>("");
+  const [text, setText] = useState<string>("");
 
-    return new TextModel(setSelectedText, selectedText, setText, text);
-  }
+  return {
+    set selection(value: string) {
+      setSelectedText(value);
+    },
 
-  public set selection(value: string) {
-    this.setSelectedText(value);
-  }
+    get selection(): string {
+      return selectedText;
+    },
 
-  public get selection(): string {
-    return this.selectedText;
-  }
+    set value(value: string) {
+      setText(value);
+    },
 
-  public set value(value: string) {
-    this.setText(value);
-  }
-
-  public get value(): string {
-    return this.text;
-  }
+    get value(): string {
+      return text;
+    },
+  };
 }

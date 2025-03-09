@@ -1,14 +1,12 @@
-export class WordCounterModel {
-  private constructor() {}
+export type WordCounterModel = ReturnType<typeof useWordCounterModel>;
 
-  public static create() {
-    return new WordCounterModel();
-  }
-
-  public calculate(text: string) {
-    return text
-      .trim()
-      .split(/\s+/)
-      .filter((word) => word).length;
-  }
+export function useWordCounterModel() {
+  return {
+    calculate(text: string) {
+      return text
+        .trim()
+        .split(/\s+/)
+        .filter((word) => word).length;
+    },
+  };
 }
