@@ -1,5 +1,5 @@
-import { useTextEditorViewModel } from "@/components/TextEditor/TextEditorViewModel";
-import { useTranslations } from "next-intl";
+import { useTextEditorViewModel } from "@/components/TextEditor/TextEditorViewModel"
+import { useTranslations } from "next-intl"
 
 type TextEditorViewModelReturnType = ReturnType<typeof useTextEditorViewModel>;
 
@@ -10,7 +10,7 @@ export function TextEditorView(props: TextEditorViewProps) {
 
   return (
     <textarea
-      className="w-full h-full focus:outline-none transition-colors overflow-y-scroll resize-none scroll:bg-red bg-background text-foreground px-[8%] lg:px-[25%] lg:py-32 text-justify font-normal tracking-[0%] selection:bg-selection-background selection:text-selection-foreground"
+      className="w-full h-full focus:outline-none overflow-y-scroll resize-none scroll:bg-red bg-background text-foreground px-[8%] lg:px-[25%] lg:py-32 text-justify font-normal tracking-[0%] selection:bg-selection-background selection:text-selection-foreground"
       placeholder={translate("Placeholder")}
       onChange={props.onTextEditorChange}
       onSelect={props.onTextEditorSelect}

@@ -1,15 +1,15 @@
-import { useCollapsibleMenuViewModel } from "@/components/CollapsibleMenu/CollapsibleMenuViewModel";
+import { useCollapsibleMenuViewModel } from "@/components/CollapsibleMenu/CollapsibleMenuViewModel"
 import {
   FontSizeControlView,
   useFontSizeControlViewModel,
-} from "@/components/FontSizeControl";
-import { IconButtonView } from "@/components/IconButton";
+} from "@/components/FontSizeControl"
+import { IconButtonView } from "@/components/IconButton"
 import {
   RiArrowRightSLine,
   RiClipboardLine,
   RiDeleteBin7Line,
   RiFileCopyLine,
-} from "@remixicon/react";
+} from "@remixicon/react"
 
 type CollapsibleMenuViewModelReturnType = ReturnType<
   typeof useCollapsibleMenuViewModel
@@ -25,7 +25,7 @@ export type CollapsibleMenuViewProps = CollapsibleMenuViewModelReturnType &
 export function CollapsibleMenuView(props: CollapsibleMenuViewProps) {
   return (
     <div
-      className={`bg-background-surface flex flex-row gap-[0.6875rem] transition-all rounded-[0.25rem] ${
+      className={`bg-background-surface flex flex-row gap-[0.6875rem] rounded-[0.25rem] ${
         props.isOpen && "p-[0.1875rem]"
       }`}
     >
@@ -42,13 +42,13 @@ export function CollapsibleMenuView(props: CollapsibleMenuViewProps) {
         </div>
       )}
       <button
-        className={`aspect-square grid place-items-center hover:bg-background-hovering transition-colors rounded-[0.25rem] ${
+        className={`aspect-square grid place-items-center hover:bg-background-hovering rounded-[0.25rem] ${
           props.isOpen ? "w-[2.375rem] bg-transparent" : "w-11 bg-background"
         }`}
         onClick={props.onToggleClick}
       >
         <RiArrowRightSLine
-          className={`w-[1.375rem] aspect-square transition-transform ${
+          className={`w-[1.375rem] aspect-square ${
             props.isOpen && "rotate-180"
           }`}
         />
